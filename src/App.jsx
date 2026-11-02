@@ -31,10 +31,10 @@ const THERAPIST_SARA = '/therapist-sara-D0UNBuba.jpg';
 const THERAPIST_HELEN = '/therapist-helen-mqrLhe0B.jpg';
 const THERAPIST_LIYA = '/therapist-liya-6uea7-IR.jpg';
 
-const PHONE_NUMBER = '+251936639092';
-const TEL_LINK = 'tel:+251936639092';
-const WHATSAPP_LINK = 'https://wa.me/251936639092';
-const TELEGRAM_LINK = 'https://t.me/+251936639092';
+const PHONE_NUMBER = '0904684445';
+const TEL_LINK = 'tel:+251904684445';
+const WHATSAPP_LINK = 'https://wa.me/251904684445';
+const TELEGRAM_LINK = 'https://t.me/+251904684445';
 
 // 5 Services (Sports Massage completely removed per instructions)
 const services = [
