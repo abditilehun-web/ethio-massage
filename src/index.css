@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 1.25rem;
+  --background: oklch(100% 0 0);
+  --foreground: oklch(18% 0.02 160);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(18% 0.02 160);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(18% 0.02 160);
+  --primary: oklch(42% 0.07 175);
+  --primary-foreground: oklch(99% 0 0);
+  --secondary: oklch(97% 0.01 90);
+  --secondary-foreground: oklch(18% 0.02 160);
+  --muted: oklch(96% 0.005 90);
+  --muted-foreground: oklch(50% 0.02 160);
+  --accent: oklch(72% 0.12 80);
+  --accent-foreground: oklch(18% 0.02 160);
+  --destructive: oklch(60% 0.22 25);
+  --destructive-foreground: oklch(99% 0 0);
+  --border: oklch(93% 0.01 90);
+  --input: oklch(93% 0.01 90);
+  --ring: oklch(42% 0.07 175);
+  --cream: oklch(96% 0.02 85);
+  --whatsapp: oklch(62% 0.18 145);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.shadow-card {
+  box-shadow: 0 4px 14px -6px rgba(0, 0, 0, 0.08), 0 2px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-soft {
+  box-shadow: 0 6px 24px -8px var(--primary);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .shadow-soft {
+    box-shadow: 0 6px 24px -8px color-mix(in oklab, var(--primary) 18%, transparent);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: 0.7s ease-out both fadeUp;
+}
