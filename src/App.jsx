@@ -24,19 +24,22 @@ import {
   X,
 } from 'lucide-react';
 
-const LOGO = '/logo-ethiomassage-C1hKcGIX.png';
 const INDOOR_ROOM = '/indoor-room-Y59Jy4KB.jpg';
 const OUTDOOR_GAZEBO = '/outdoor-gazebo-DyyTxuM4.jpg';
 const THERAPIST_SARA = '/therapist-sara-D0UNBuba.jpg';
 const THERAPIST_HELEN = '/therapist-helen-mqrLhe0B.jpg';
 const THERAPIST_LIYA = '/therapist-liya-6uea7-IR.jpg';
 
+const BUSINESS_NAME = 'MASSAGE ADDIS';
+const LOCATION_NAME = 'Welo Sefer, Addis Ababa, Ethiopia';
 const PHONE_NUMBER = '0904684445';
 const TEL_LINK = 'tel:+251904684445';
 const WHATSAPP_LINK = 'https://wa.me/251904684445';
 const TELEGRAM_LINK = 'https://t.me/+251904684445';
+const GOOGLE_MAPS_EMBED_URL =
+  'https://www.google.com/maps?q=Welo+Sefer,+Addis+Ababa,+Ethiopia&output=embed';
 
-// 5 Services (Sports Massage completely removed per instructions)
+// 5 Services
 const services = [
   { icon: HandHeart, name: 'Swedish Massage' },
   { icon: Activity, name: 'Deep Tissue Massage' },
@@ -45,7 +48,7 @@ const services = [
   { icon: Building2, name: 'Hotel Service' },
 ];
 
-// Why Choose Ethiomassage (Exact 6 original items with zero extra subtext)
+// Why Choose MASSAGE ADDIS
 const whyChooseItems = [
   { icon: UserRound, label: 'Professional Therapists' },
   { icon: Car, label: 'We Come To You' },
@@ -55,14 +58,14 @@ const whyChooseItems = [
   { icon: MapPin, label: 'Addis Ababa Coverage' },
 ];
 
-// 3 Therapists (Sara M., Helen T., Liya A. with ONLY name, photo, and 5.0 rating)
+// 3 Therapists
 const therapists = [
   { name: 'Sara M.', img: THERAPIST_SARA },
   { name: 'Helen T.', img: THERAPIST_HELEN },
   { name: 'Liya A.', img: THERAPIST_LIYA },
 ];
 
-// Exact 6 original reviews with exact flags, ratings, and copy
+// Exact 6 reviews
 const reviews = [
   {
     name: 'Elena Rostova',
@@ -114,7 +117,7 @@ const reviews = [
   },
 ];
 
-// Clean environment-only images for Hero (All massage session photos removed per Rule 1)
+// Clean environment-only images for Hero
 const heroSlides = [
   { src: INDOOR_ROOM, alt: 'Indoor relaxation room setup' },
   { src: OUTDOOR_GAZEBO, alt: 'Outdoor garden gazebo sanctuary' },
@@ -178,7 +181,7 @@ function SectionTitle({ children }) {
   return (
     <div className="flex items-center justify-center gap-3 mb-6">
       <Sparkles className="h-4 w-4 text-accent" aria-hidden="true" />
-      <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
+      <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground tracking-tight text-center">
         {children}
       </h2>
       <Sparkles className="h-4 w-4 text-accent scale-x-[-1]" aria-hidden="true" />
@@ -260,6 +263,134 @@ function TestimonialsSection() {
   );
 }
 
+function ContactSection({ onOpenBooking }) {
+  return (
+    <section id="contact" className="px-3 mt-8">
+      <div className="mx-auto max-w-5xl bg-background rounded-3xl shadow-card p-6 md:p-10">
+        <SectionTitle>Contact {BUSINESS_NAME}</SectionTitle>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          {/* Contact Details */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-display text-xl md:text-2xl font-bold text-foreground">
+                Visit or Book a Session
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                {BUSINESS_NAME} delivers luxury mobile massage directly to your home, apartment, or hotel suite anywhere in Addis Ababa, or you can visit our location in Welo Sefer.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="h-10 w-10 rounded-full bg-cream grid place-items-center text-primary shrink-0 shadow-xs">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    Our Location
+                  </p>
+                  <p className="text-sm md:text-base font-semibold text-foreground">
+                    {LOCATION_NAME}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Bole / Kirkos Subcity, Addis Ababa
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="h-10 w-10 rounded-full bg-cream grid place-items-center text-primary shrink-0 shadow-xs">
+                  <Phone className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    Direct Phone Line
+                  </p>
+                  <a
+                    href={TEL_LINK}
+                    className="text-base font-bold text-primary hover:underline"
+                  >
+                    {PHONE_NUMBER}
+                  </a>
+                  <p className="text-xs text-muted-foreground">Available 24/7 for swift booking</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="h-10 w-10 rounded-full bg-cream grid place-items-center text-primary shrink-0 shadow-xs">
+                  <Clock className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                    Working Hours
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    Open 24 Hours / 7 Days a Week
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Messaging Actions */}
+            <div className="pt-2 flex flex-wrap gap-3">
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-2xl bg-whatsapp text-white px-5 py-2.5 font-medium text-sm shadow-soft hover:brightness-105 transition"
+              >
+                <MessageCircle className="h-4 w-4" />
+                <span>WhatsApp Us</span>
+              </a>
+              <a
+                href={TELEGRAM_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-2xl bg-[#229ED9] text-white px-5 py-2.5 font-medium text-sm shadow-soft hover:brightness-105 transition"
+              >
+                <Send className="h-4 w-4" />
+                <span>Telegram Chat</span>
+              </a>
+              <button
+                onClick={onOpenBooking}
+                className="inline-flex items-center gap-2 rounded-2xl bg-primary text-primary-foreground px-5 py-2.5 font-medium text-sm shadow-soft hover:bg-primary/90 transition cursor-pointer"
+              >
+                <CalendarDays className="h-4 w-4" />
+                <span>Book Session</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Embedded Google Maps Iframe */}
+          <div className="flex flex-col space-y-2">
+            <div className="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-card border border-border/70 bg-muted">
+              <iframe
+                title={`${BUSINESS_NAME} Location Map - ${LOCATION_NAME}`}
+                src={GOOGLE_MAPS_EMBED_URL}
+                className="w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen=""
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div className="text-center pt-1">
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Welo+Sefer,+Addis+Ababa,+Ethiopia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1 text-xs sm:text-sm font-medium text-teal-600 hover:text-teal-700 underline underline-offset-4 cursor-pointer transition-colors"
+              >
+                📍 Directing to {LOCATION_NAME}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function BookingModal({ open, onClose }) {
   if (!open) return null;
 
@@ -284,7 +415,8 @@ function BookingModal({ open, onClose }) {
           <div className="mx-auto h-12 w-12 rounded-full bg-cream grid place-items-center mb-3">
             <CalendarDays className="h-6 w-6 text-primary" />
           </div>
-          <h3 className="font-display text-xl font-semibold">Book Your Massage</h3>
+          <h3 className="font-display text-xl font-semibold">Book with {BUSINESS_NAME}</h3>
+          <p className="text-xs text-accent font-medium mt-0.5">{LOCATION_NAME}</p>
           <p className="text-sm text-muted-foreground mt-1">Choose how you'd like to contact us</p>
         </div>
 
@@ -340,26 +472,67 @@ function BookingModal({ open, onClose }) {
   );
 }
 
+function Footer() {
+  return (
+    <footer className="mt-12 px-3 pb-8 text-center text-xs text-muted-foreground">
+      <div className="mx-auto max-w-5xl pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-2">
+          <span className="font-display font-bold text-sm text-foreground">
+            {BUSINESS_NAME}
+          </span>
+          <span>•</span>
+          <span>{LOCATION_NAME}</span>
+        </div>
+        <p>© {new Date().getFullYear()} {BUSINESS_NAME}. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+}
+
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const openBooking = () => setModalOpen(true);
   const closeBooking = () => setModalOpen(false);
 
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      openBooking();
+    }
+  };
+
+  const scrollToServices = () => {
+    const el = document.getElementById('services');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      openBooking();
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[oklch(0.985_0.005_90)] pb-28">
-      {/* 1. Header: Logo on left, Call Us button on right, NO center navbar links */}
+      {/* 1. Header / Navbar: Clean MASSAGE ADDIS branding on left, Call Us button on right */}
       <header className="sticky top-0 z-40 pt-3 px-3">
         <div className="mx-auto max-w-5xl bg-background rounded-3xl shadow-card px-4 py-3 flex items-center justify-between">
-          <img
-            src={LOGO}
-            alt="Ethiomassage — Relax. Renew. Rejuvenate."
-            width={1536}
-            height={512}
-            className="h-12 md:h-14 w-auto object-contain"
-          />
+          <div className="flex items-center gap-2.5">
+            <div className="h-10 w-10 rounded-2xl bg-cream grid place-items-center shadow-xs text-primary border border-border/60">
+              <Flower2 className="h-5 w-5 text-primary" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-display text-lg md:text-xl font-bold tracking-tight text-primary leading-tight">
+                {BUSINESS_NAME}
+              </span>
+              <span className="text-[10px] tracking-widest uppercase text-muted-foreground font-medium -mt-0.5">
+                Spa &amp; Wellness
+              </span>
+            </div>
+          </div>
           <a
             href={TEL_LINK}
-            aria-label="Call us"
+            aria-label={`Call ${BUSINESS_NAME}`}
             className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 py-2 text-sm font-medium shadow-soft hover:scale-105 transition"
           >
             <Phone className="h-4 w-4" />
@@ -373,6 +546,10 @@ export default function App() {
         <div className="mx-auto max-w-5xl bg-background rounded-3xl overflow-hidden shadow-card">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             <div className="p-6 md:p-10 flex flex-col justify-center animate-fade-up">
+              <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent uppercase tracking-wider mb-2">
+                <Sparkles className="h-3.5 w-3.5" />
+                <span>{BUSINESS_NAME}</span>
+              </div>
               <h1 className="font-display leading-[1.05]">
                 <span className="block text-4xl md:text-5xl font-bold text-foreground">
                   Professional
@@ -386,7 +563,7 @@ export default function App() {
                 </span>
               </h1>
               <p className="mt-6 text-foreground/80 text-base md:text-lg leading-snug">
-                Indoor &amp; Outdoor<br />Massage Services
+                Indoor &amp; Outdoor<br />Massage Services in Addis Ababa
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <button
@@ -407,7 +584,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Hero Image Slider: Only clean environment photos, all massage photos removed */}
+            {/* Hero Image Slider: Only clean environment photos */}
             <div className="relative h-72 md:h-auto md:min-h-[420px]">
               <HeroSlider />
               <div className="md:hidden absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>
@@ -422,8 +599,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* 3. Our Services (Sports Massage completely removed per Rule 2) */}
-      <section className="px-3 mt-6">
+      {/* 3. Our Services */}
+      <section id="services" className="px-3 mt-6">
         <div className="mx-auto max-w-5xl bg-background rounded-3xl shadow-card p-5 md:p-8">
           <SectionTitle>Our Services</SectionTitle>
           <div className="flex flex-wrap justify-center gap-3">
@@ -451,7 +628,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Indoor & Outdoor Section: Exact original text and environment photos */}
+      {/* Indoor & Outdoor Section */}
       <section className="px-3 mt-5">
         <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
@@ -502,10 +679,10 @@ export default function App() {
         </div>
       </section>
 
-      {/* 4. Why Choose Ethiomassage? (Exact 6 original items with zero extra subtext) */}
+      {/* 4. Why Choose MASSAGE ADDIS? */}
       <section className="px-3 mt-7">
         <div className="mx-auto max-w-5xl">
-          <SectionTitle>Why Choose Ethiomassage?</SectionTitle>
+          <SectionTitle>Why Choose {BUSINESS_NAME}?</SectionTitle>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
             {whyChooseItems.map(({ icon: Icon, label }) => (
               <div key={label} className="flex flex-col items-center text-center">
@@ -521,7 +698,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 5. Our Therapists: Exact name, photo, and 5.0 rating only */}
+      {/* 5. Our Therapists */}
       <section className="px-3 mt-8">
         <div className="mx-auto max-w-5xl">
           <div className="flex items-center justify-between mb-4">
@@ -566,7 +743,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 6. What Our Clients Say (Exact 6 original reviews) */}
+      {/* 6. What Our Clients Say */}
       <section className="px-3 mt-8">
         <div className="mx-auto max-w-5xl">
           <SectionTitle>What Our Clients Say</SectionTitle>
@@ -574,13 +751,19 @@ export default function App() {
         </div>
       </section>
 
-      {/* 7. Floating Action Buttons: Sticky Telegram and WhatsApp fixed at bottom */}
+      {/* 7. Contact Component with Embedded Google Maps */}
+      <ContactSection onOpenBooking={openBooking} />
+
+      {/* 8. Footer */}
+      <Footer />
+
+      {/* 9. Floating Action Buttons */}
       <div className="fixed bottom-24 right-4 z-50 flex flex-col gap-2 items-end">
         <a
           href={TELEGRAM_LINK}
           target="_blank"
           rel="noreferrer"
-          aria-label="Book via Telegram"
+          aria-label={`Book with ${BUSINESS_NAME} via Telegram`}
           className="inline-flex items-center gap-2 rounded-full bg-[#229ED9] text-white pl-2 pr-4 py-2 shadow-soft hover:scale-105 transition"
         >
           <span className="h-9 w-9 rounded-full bg-white/15 grid place-items-center">
@@ -593,7 +776,7 @@ export default function App() {
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noreferrer"
-          aria-label="Book via WhatsApp"
+          aria-label={`Book with ${BUSINESS_NAME} via WhatsApp`}
           className="inline-flex items-center gap-2 rounded-full bg-whatsapp text-white pl-2 pr-4 py-2 shadow-soft hover:scale-105 transition"
         >
           <span className="h-9 w-9 rounded-full bg-white/15 grid place-items-center">
@@ -603,7 +786,7 @@ export default function App() {
         </a>
       </div>
 
-      {/* Bottom Floating Navigation Bar */}
+      {/* 10. Bottom Floating Navigation Bar */}
       <nav className="fixed bottom-3 left-3 right-3 z-40">
         <div className="mx-auto max-w-md bg-background rounded-full shadow-soft border border-border/60 px-3 py-2 grid grid-cols-4">
           {[
@@ -613,9 +796,9 @@ export default function App() {
               active: true,
               onClick: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
             },
-            { Icon: HandHeart, label: 'Services', onClick: openBooking },
+            { Icon: HandHeart, label: 'Services', onClick: scrollToServices },
             { Icon: CalendarDays, label: 'Booking', onClick: openBooking },
-            { Icon: Phone, label: 'Contact', onClick: openBooking },
+            { Icon: Phone, label: 'Contact', onClick: scrollToContact },
           ].map(({ Icon, label, active, onClick }) => (
             <button
               key={label}
@@ -631,7 +814,7 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Booking Modal (Original Clean Version) */}
+      {/* Booking Modal */}
       <BookingModal open={modalOpen} onClose={closeBooking} />
     </div>
   );
