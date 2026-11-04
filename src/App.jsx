@@ -24,6 +24,9 @@ import {
   X,
 } from 'lucide-react';
 
+const HERO_1 = '/hero-1-Cu1SK3-u.png';
+const HERO_2 = '/hero-2-CSoTeyv8.png';
+const HERO_3 = '/hero-3-uLoErdZZ.png';
 const INDOOR_ROOM = '/indoor-room-Y59Jy4KB.jpg';
 const OUTDOOR_GAZEBO = '/outdoor-gazebo-DyyTxuM4.jpg';
 const THERAPIST_SARA = '/therapist-sara-D0UNBuba.jpg';
@@ -117,10 +120,11 @@ const reviews = [
   },
 ];
 
-// Clean environment-only images for Hero
+// Original massage pictures for Hero
 const heroSlides = [
-  { src: INDOOR_ROOM, alt: 'Indoor relaxation room setup' },
-  { src: OUTDOOR_GAZEBO, alt: 'Outdoor garden gazebo sanctuary' },
+  { src: HERO_1, alt: 'Outdoor garden massage session' },
+  { src: HERO_2, alt: 'Indoor relaxation massage' },
+  { src: HERO_3, alt: 'Luxury spa back massage' },
 ];
 
 function HeroSlider() {
@@ -584,7 +588,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Hero Image Slider: Only clean environment photos */}
+            {/* Hero Image Slider: Original massage pictures restored */}
             <div className="relative h-72 md:h-auto md:min-h-[420px]">
               <HeroSlider />
               <div className="md:hidden absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>
